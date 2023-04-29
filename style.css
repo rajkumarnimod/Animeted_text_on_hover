@@ -1,0 +1,44 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ani-text
+{
+    width:100%;
+    height: 100vh;
+    background-color: red;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text
+{
+ position: relative;
+ font-size: 10rem;
+ font-family: sans-serif;
+ text-transform: capitalize;
+ color: transparent;
+ -webkit-text-stroke: 2px #ffffff;
+}
+
+.text::before
+{
+    content: attr(data-fill-text);
+    position: absolute;
+    width: 0;
+    height: 100%;
+    color: #ffffff;
+    -webkit-text-stroke: 0 transparent;
+    overflow: hidden;
+    transition: width 1s cubic-bezier(0.165,0.84,0.44,1);
+}
+.text:hover::before
+{
+    width: 100%;
+}
+
